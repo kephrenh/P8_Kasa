@@ -1,24 +1,12 @@
-import './App.css'
+import './App.scss'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
-import { Navbar } from './components/Navbar.jsx'
-import { Footer } from './components/Footer.jsx'
+import { createBrowserRouter, RouterProvider} from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import ErrorPage from './pages/ErrorPage.jsx'
 import { Housing } from './pages/Housing.jsx'
-
-
-const Layout = () => {
-  return (
-    <>
-        <Navbar />
-        <Outlet />
-        <Footer />
-    </>
-    )
-}
+import Layout from './components/Layout/Layout.jsx'
 
 const router = createBrowserRouter([
   {
@@ -32,11 +20,17 @@ const router = createBrowserRouter([
       },
       {
         path: '/about',
-        element: <About />
+        element: <About />,
+        errorElement: <ErrorPage />,
       },
       {
-        path: '/housing',
-        element: <Housing />
+        path: '/housing/:id',
+        element: <Housing />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: '*',
+        element: <ErrorPage />,
       },
     ]
   }
