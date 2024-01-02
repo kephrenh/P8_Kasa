@@ -7,7 +7,7 @@ export function Header() {
         return (
             <NavLink to={"/"}
                 className={({ isActive }) => (isActive ? 'active' : 'inactive')}>
-                <img className="nav__logo" src="logo-nav.svg" alt="Kasa Logo" />
+                <img className="nav__logo" src="src/assets/logo-nav.svg" alt="Kasa Logo" />
             </NavLink>
         )
     }
