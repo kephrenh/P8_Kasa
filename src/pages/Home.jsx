@@ -7,8 +7,9 @@ function Home() {
   return (
     <>
         <Banner
-          bannerImage="banner-home.png"
-          bannerText="Chez vous, partout et ailleurs"
+          bannerImage="src/assets/banner-home.png "
+          bannerTextLine1="Chez vous, "
+          bannerTextLine2="partout et ailleurs"
         />
         <Gallery />
     </>
