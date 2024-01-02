@@ -6,12 +6,12 @@ export default function Card(props) {
   const Figure = () => {
 
     return (
-      <figure className="main__housing">
+      <figure className="card">
               <Link
-              className='main__housing__link'
+              className='card__link'
               to={props.link}>
-                  <img src={props.cover} alt={props.title} className='main__housing__link__img' />
-                  <figcaption className="main__housing__link__title">
+                  <img src={props.cover} alt={props.title} className='card__link__img' />
+                  <figcaption className="card__link__title">
                       {props.title}
                   </figcaption>
               </Link>

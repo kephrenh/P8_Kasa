@@ -1,13 +1,16 @@
 import React from 'react'
 import '../App.css'
-import HomeMain from '../components/HomeMain.jsx'
-import HomeHeader from '../components/HomeHeader.jsx'
+import Gallery from '../components/Gallery.jsx'
+import Banner from '../components/Banner.jsx'
 
 function Home() {
   return (
     <>
-        <HomeHeader bannerImage="banner-home.png" bannerText="Chez vous, partout et ailleurs" />
-        <HomeMain />
+        <Banner
+          bannerImage="banner-home.png"
+          bannerText="Chez vous, partout et ailleurs"
+        />
+        <Gallery />
     </>
   )
 }

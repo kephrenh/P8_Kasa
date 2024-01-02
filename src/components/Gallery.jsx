@@ -1,10 +1,10 @@
 import React from 'react'
 import Card from './Card'
-import data from './data'
+import database from './database'
 
 export default function Gallery() {
 
-  const thumbs = data.slice(0, 6)
+  const thumbs = database.slice(0, 6)
               .map((data) => {
                 return <Card
                         key={data.id}
@@ -14,6 +14,6 @@ export default function Gallery() {
               })
 
   return (
-    <main className='main'>{thumbs}</main>
+    <main className='gallery'>{thumbs}</main>
   )
 }
