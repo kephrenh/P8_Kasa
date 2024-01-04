@@ -17,16 +17,23 @@ export default function Collapse({title, content}) {
       "visible" : "hidden") + " dropdown__content";
 
    const chevronClass = (isOpen ?
-      "fa-chevron-up chevron rotate-down" : "fa-chevron-up chevron") + " fa-solid";
+      "fa-chevron-up chevron rotate" : "fa-chevron-up chevron") + " fa-solid";
+
+   const titleClass = (isOpen ?
+      "visible" : "") + " dropdown__title";
+   
+      const dropdownClass = (isOpen ?
+      "visible" : "hidden") + " dropdown";
+
+   
 
   return (
-      <section className='dropdown'>
-         <p className='dropdown__title'>
+      <section className={dropdownClass}>
+         <p className={titleClass}>
             <span>{title}</span>
             <i className={chevronClass} onClick={display} />
          </p>
          <div className={contentClass}>{content}</div>
-         
       </section>
    )
 }
