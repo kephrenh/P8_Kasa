@@ -18,46 +18,50 @@ function Carousel({slides}) {
          setCurrentIndex(currentIndex - 1)
          if(currentIndex === 0) {
             setCurrentIndex(length - 1)
+            
         }
     }
 
     const images = slides.map((image, index) => {
       return (
           index === currentIndex && (
-               <img key={index} src={image} alt="Image logement"
-               className={index === currentIndex ?
-                  "carousel__banner__image carousel__banner__image--active"
-                  : "carousel__banner__image"}
-               />
-            )
-         )
-          })
-
-    if(!Array.isArray(slides) || slides.length <= 0) {
-      return null
-    }
-    return (
-         <div className='carousel'>
-            <div className='carousel__banner'>
-               {images}
-               <i
-                  className='fa-solid fa-chevron-left fa-5x
-                  carousel__banner__chevron
-                  carousel__banner__chevron--left'
-                  onClick={prevSlide}
-               />
-               <i
-                  className='fa-solid fa-chevron-right fa-5x
-                  carousel__banner__chevron
-                  carousel__banner__chevron--right'
-                  onClick={nextSlide}
-               />
-               <span>
-                  {currentIndex + 1}/{length}
-               </span>
-            </div>
+            <div key={index} className="carousel__banner"
+            >
+            <img
+               src={image}
+               alt="image logement"
+               className='carousel__banner__image'
+            />
          </div>
-    )
+         )
+      )
+   })
+
+   return (
+      <div className='carousel'>
+         {images}
+
+         {length > 1 && (<span className='carousel__count'>
+            {currentIndex + 1}/{length}
+         </span>
+         )}
+
+         {length > 1 && (<i
+            className='fa-solid fa-chevron-left fa-5x
+            carousel__chevron
+            carousel__chevron--left'
+            onClick={prevSlide}
+         />
+         )}
+         
+         {length > 1 && (<i
+            className='fa-solid fa-chevron-right fa-5x
+            carousel__chevron
+            carousel__chevron--right'
+            onClick={nextSlide}
+         />)}
+      </div>
+   )
 
       
 }
