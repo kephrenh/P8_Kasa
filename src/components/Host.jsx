@@ -1,10 +1,13 @@
 import React from 'react'
 
-export default function Host({name, picture}) {
+export default function Host({firstName, lastName, picture}) {
    
   return (
     <>
-      <h2>{name}</h2>
+      <h2>
+         <span>{firstName}</span>
+         <span>{lastName}</span>
+      </h2>
       <img src={picture} alt={name + " picture"} />
    </>
 )
