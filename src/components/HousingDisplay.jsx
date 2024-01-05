@@ -24,11 +24,16 @@ export default function HousingDisplay() {
    // Équipements
    const equipements = data?.equipments.map((equipment, index) => {
       return (
-         <ul key={index}>
-        <li>{equipment}</li>
-      </ul>
-    )
+            <span key={index}>
+               {equipment}
+            </span>
+      )
    })
+
+   // Nom du logeur
+   const name = data?.host.name.split(' ')
+
+   document.title = data?.title + " - Kasa"
    
    return (
       <>
@@ -50,7 +55,8 @@ export default function HousingDisplay() {
             <div className='housing__header__owner'>
                <div className='housing__header__owner__info'>
                   <Host
-                     name={data?.host.name}
+                     firstName={name[0]}
+                     lastName={name[1]}
                      picture={data?.host.picture}
                   />
                </div>
@@ -71,7 +77,7 @@ export default function HousingDisplay() {
                      content={equipements}
                   />
             </div>
-        </main>
+:        </main>
     ) : (
       <Navigate replace to="/404"/>
     ) }
