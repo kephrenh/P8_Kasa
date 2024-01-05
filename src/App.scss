@@ -2,8 +2,8 @@
 // Variables
 $main-color: #FF6060;
 $greyStar : #E3E3E3;
+$greyCollapse: #F6F6F6;
 $whiteColor : #FFF;
-
 
 // Mixins
 @mixin flexRowCenter {
@@ -35,7 +35,7 @@ $whiteColor : #FFF;
 @mixin tag {
    @include flexRowCenter;
    flex-shrink: 0;
-   width: 115px;
+   width: 150px;
    height: 25px;
    background-color: $main-color;
    color: $whiteColor;
@@ -45,27 +45,10 @@ $whiteColor : #FFF;
    font-size: 14px;
 
    @media(max-width: 630px) {
-      width: 84px;
+      width: 90px;
       height: 18px;
       font-size: 10px;
-   }
-}
-
-@mixin collapseHeader {
-   max-width: 1023px;
-   height: 52px;
-   background-color: $main-color;
-   color: $whiteColor;
-   border-radius: 5px;
-   padding: 10px 20px 10px 10px;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   transition: width 0.6s ease-in-out;
-
-   @media(max-width: 630px) {
-      height: 30px;
-      padding: 10px 6px 10px 10px;
+      border-radius: 5px;
    }
 }
 
@@ -99,12 +82,11 @@ a {
 #root {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100dvh;
 }
 
 main {
-   padding-inline: 100px;
-
+   flex-grow: 1;
    @media(max-width: 630px) {
       padding-inline: 10px;
    }
@@ -264,8 +246,8 @@ main {
     @include flexColCenter;
     gap: 29px;
     font-size: 24px;
-    margin-top: auto;
-    position: sticky;
+    position: relative;
+    bottom: 0;
 
     @media(max-width: 662px) {
         gap: 20px;
@@ -290,60 +272,74 @@ main {
    width: 100%;
    display: flex;
    flex-direction: column;
-   margin-top: 50px;
+   margin-block: 50px;
    flex-grow: 1;
+   padding-inline: 100px;
 
-   @media(max-width: 630px) {
+   @media(max-width: 1115px) {
       margin-block: 27px 25px;
+      padding-inline: 20px ;
+      padding-bottom: 27px;
    }
 }
+
+@keyframes zoom {
+   from {
+      transform: scale(0.9);
+   }
+}
+
 
 .carousel {
    width: 100%;
    height: 445px;
-
-   @media(max-width: 630px) {
-      height: 255px;
-   }
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: $whiteColor;
+   overflow: hidden;
 
    &__banner {
+      position: absolute;
+      border-radius: 10px;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      position: relative;
-      color: $whiteColor;
-      @include flexRowCenter;
+      overflow: hidden;
+      animation: zoom ease-in 0.4s;
 
       &__image {
-         position: absolute;
          width: 100%;
          height: 100%;
          object-fit: cover;
+         position: absolute;
          border-radius: 25px;
-      }
-
-      &__chevron {
-         position: absolute;
-
-         @media(max-width: 630px) {
-            font-size: 18px;
-         }
-
-         &--left {
-            left: 20px;
-         }
-
-         &--right {
-            right: 20px;
-         }
-      }
-
-      & > span {
-         position: absolute;
-         bottom: 20px;
-         font-size: 18px;
 
       }
+   }
+
+   &__count {
+      position: absolute;
+      bottom: 25px;
+      font-size: 18px;
+   }
+   
+   
+   &__chevron {
+      position: absolute;
+      
+
+      &--left {
+         left: 25px;
+      }
+
+      &--right {
+         right: 25px;
+      }
+   }
+
+   @media(max-width: 630px) {
+      height: 255px;
    }
 }
 
@@ -353,31 +349,43 @@ main {
    color: $main-color;
    margin-block: 30px 31px;
 
-   @media(max-width: 630px) {
+   @media(max-width: 1115px) {
       margin-bottom: 20px;
       width: 100%;
       flex-direction: column;
    }
 
    &__property {
-      width: 50%;
+      width: 60%;
       display: flex;
       justify-content: center;
       flex-direction: column;
       gap: 20px;
 
-      @media(max-width: 630px) {
+      @media(max-width: 1115px) {
          width: 100%;
          gap: 10px;
+      }
+
+      &__info {
+         display: flex;
+         flex-direction: column;
+         gap: 15px;
+
+         @media(max-width: 1115px) {
+            gap: 0;
+         }
       }
 
       &__info > h1 {
          height: 51px;
          font-size: 36px;
+         line-height: 35px;
          display: flex;
          align-items: center;
 
-         @media(max-width: 630px) {
+         @media(max-width: 1115px) {
+            line-height: 142.6%;
             height: 48px;
             font-size: 18px;
          }
@@ -387,7 +395,7 @@ main {
          font-size: 18px;
          height: 26px;
 
-         @media(max-width: 630px) {
+         @media(max-width: 1115px) {
             height: 22px;
             font-size: 14px;
          }
@@ -397,7 +405,7 @@ main {
          display: flex;
          gap: 10px;
 
-         @media(max-width: 630px) {
+         @media(max-width: 1115px) {
             margin-top: 10px;
          }
          
@@ -414,7 +422,7 @@ main {
       flex-direction: column;
       align-items: flex-end;
 
-      @media(max-width: 630px) {
+      @media(max-width: 1115px) {
          width: 100%;
          flex-direction: row-reverse;
          align-items: center;
@@ -423,7 +431,7 @@ main {
 
       .fa-star {
          font-size: 25px;
-         @media(max-width: 630px) {
+         @media(max-width: 1115px) {
             font-size: 15px;
          }
          
@@ -444,13 +452,16 @@ main {
          align-items: center;
          gap: 10px;
 
-         @media(max-width: 630px) {
+         @media(max-width: 1115px) {
             margin-left: auto;
          }
          
          & > h2 {
             font-size: 18px;
-            @media(max-width: 630px) {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            @media(max-width: 1115px) {
                font-size: 12px;
             }
          }
@@ -460,7 +471,7 @@ main {
             height: 64px;
             border-radius: 50%;
 
-            @media(max-width: 630px) {
+            @media(max-width: 1115px) {
                width: 32px;
                height: 32px;
             }
@@ -476,72 +487,75 @@ main {
    gap: 76px;
    margin-inline: auto;
 
-   @media(max-width: 630px) {
-      width: 335px;
+   @media(max-width: 1340px) {
+      min-width: 335px;
       flex-direction: column;
-      justify-content: flex-start;
       align-items: center;
-      gap: 20px;
-   }
-
-   & section {
-     display: flex;
-     flex-direction: column;
-
-     & > p {
-      @include collapseHeader;
-     }
-
-   }
-   
-   &__description {
-      width: 50%;
-   }
-   
-   &__equipments {
-      width: 50%;
+      gap: 40px;
    }
 }
 
 .dropdown {
-   border-radius: 10px 10px 0 0;
-   width: 582px;
+   min-width: 582px;
    overflow: hidden;
-   position: relative;
 
-   @media(max-width: 630px) {
-      margin-bottom: -40px;
-      width: 335px;
+   &.visible {
+      margin-bottom: 0;
+   }
+
+   &.hidden {
+      margin-bottom: -50px;
+   }
+
+   @media (max-width: 706px) {
+      min-width: 335px;
    }
    
+   
    &__title {
+      background-color: $main-color;
+      color: #FFF;
+      font-size: 18px;
+      height: 52px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px 10px 10px;
+      position: relative;
       z-index: 1;
+      overflow: hidden;
+      
+      @media (max-width: 706px) {
+         font-size: 13px;
+         height: 30px;
+         border-radius: 5px;
+      }
 
-      @media(max-width: 630px) {
-         // margin-top: 5px;
+      &.visible {
+         border-radius: 5px 5px 0 0;
       }
    }
    
    &__content {
-      background-color: #F6F6F6;
-      color: $main-color;
-      border-radius: 5px;
-      padding: 25px 28px 20px 20px;
-      transition: transform 0.3s ease-in-out;
-      transition: height 0.3s ease-in-out;
+      background-color: $greyCollapse;
+      transition: all 0.3s ease-in-out;
       overflow: hidden;
-      @media(max-width: 630px) {
-         padding: 13px 20px 19px 20px;
-         width: 335px;
+      border-radius: 0 0 5px 5px;
+      padding: 25px 28px 20px 20px;
+      color: $main-color;
+      font-size: 18px;
+      font-weight: 400;
+      display: flex;
+      flex-direction: column;
+
+      @media (max-width: 811px) {
+         padding: 10px 20px 19px 20px;
       }
       
       &.visible {
+         height: 250px;
          transform: translateY(0);
-         height: 227px;
-
-         @media(max-width: 630px) {
-            height: 181px;
-         }
       }
       
       &.hidden {
@@ -554,15 +568,15 @@ main {
 .chevron {
    transition: transform 0.3s ease-in-out ;
    
-   &.rotate-down {
+   &.rotate {
       transform: rotate(-180deg);
    }
+
 }
 
 // Page 404
 .error {
    width: 100%;
-   // height: 100%;
    flex-grow: 1;
    overflow: hidden;
    @include flexColCenter;
@@ -610,3 +624,37 @@ main {
       }
    }
 }
+
+// Page A Propos
+.about {
+   max-width: 1440px;
+   display: flex;
+   flex-direction: column;
+   padding-bottom: 30px;
+   
+   @media (max-width: 630px) {
+      padding-inline: 19px;;
+   }
+   
+   &__dropdowns {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      align-items: center;
+      padding-inline: 210px;
+
+      @media (max-width: 458px) {
+         gap: 35px;
+         padding-inline: 0;
+         margin-inline: auto;
+         max-width: 375px;
+      }
+
+   }
+
+}
+
+
+
+ 
+
