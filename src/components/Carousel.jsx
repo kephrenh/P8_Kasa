@@ -8,7 +8,9 @@ function Carousel({slides}) {
     // Image suivante
     const nextSlide = () => {
         setCurrentIndex(currentIndex + 1)
-        if(currentIndex === length - 1) {
+
+         // Retour à la première image quand fin de slide
+         if(currentIndex === length - 1) {
             setCurrentIndex(0)
         }
     }
@@ -16,12 +18,15 @@ function Carousel({slides}) {
     // Image précédente
     const prevSlide = () => {
          setCurrentIndex(currentIndex - 1)
+
+         // Retour à la dernière image quand début de slide
          if(currentIndex === 0) {
             setCurrentIndex(length - 1)
             
         }
     }
 
+   // Parcourir l'objet slides pour identifier les images
     const images = slides.map((image, index) => {
       return (
           index === currentIndex && (
@@ -41,6 +46,7 @@ function Carousel({slides}) {
       <div className='carousel'>
          {images}
 
+         {/* Chevrons et compteur affichés uniquement quand nombre d'images > 1 */}
          {length > 1 && (<span className='carousel__count'>
             {currentIndex + 1}/{length}
          </span>

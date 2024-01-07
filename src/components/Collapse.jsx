@@ -13,6 +13,7 @@ export default function Collapse({title, content}) {
     setIsOpen(!isOpen)
   }
 
+   // Classes en fonction de l'affichage du contenu
    const contentClass = (isOpen ?
       "visible" : "hidden") + " dropdown__content";
 
@@ -33,7 +34,9 @@ export default function Collapse({title, content}) {
             <span>{title}</span>
             <i className={chevronClass} onClick={display} />
          </p>
-         <div className={contentClass}>{content}</div>
+         <div className={contentClass}>
+            {content}
+         </div>
       </section>
    )
 }

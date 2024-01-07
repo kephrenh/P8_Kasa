@@ -8,7 +8,7 @@ export default function Host({firstName, lastName, picture}) {
          <span>{firstName}</span>
          <span>{lastName}</span>
       </h2>
-      <img src={picture} alt={name + " picture"} />
+      <img src={picture} alt="Photo du logeur" />
    </>
 )
 }

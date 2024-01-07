@@ -12,7 +12,7 @@ import Collapse from './Collapse'
 
 export default function HousingDisplay() {
 
-  // Récupération de la fiche
+  // Récupération de la fiche et identification des données par id
   const { id } = useParams()
   const data = database.find((housing) => housing.id === id)
   
@@ -30,15 +30,15 @@ export default function HousingDisplay() {
       )
    })
 
-   // Nom du logeur
+   // Diviser le nom du logeur en deux pour firstName et lastName
    const name = data?.host.name.split(' ')
 
    document.title = data?.title + " - Kasa"
    
    return (
       <>
-    {data ? (
-       <main className='housing'>
+    {data ? (  // Retourner les éléments si les données sont trouvées
+      <main className='housing'>
         <Carousel slides={data?.pictures}/>
         <div className='housing__header'>
             <div className='housing__header__property'>
@@ -66,19 +66,19 @@ export default function HousingDisplay() {
                   />
                 </div>
             </div>
-        </div>
-            <div className='collapse'>
-                  <Collapse
-                     title='Description'
-                     content={data?.description}
-                  />
-                  <Collapse
-                     title='Équipements'
-                     content={equipements}
-                  />
-            </div>
-:        </main>
-    ) : (
+         </div>
+         <div className='collapse'>
+               <Collapse
+                  title='Description'
+                  content={data?.description}
+               />
+               <Collapse
+                  title='Équipements'
+                  content={equipements}
+               />
+         </div>
+        </main>
+    ) : (   // Si pas de données, redirection vers la page 404
       <Navigate replace to="/404"/>
     ) }
     </>

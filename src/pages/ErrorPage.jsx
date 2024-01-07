@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 
 export default function ErrorPage() {
-   document.title = "404 - Kasa"
+   
+   document.title = "404 - Kasa"    // Titre du document
 
     return (
         <main className="error">
