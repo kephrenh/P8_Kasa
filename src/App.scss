@@ -88,7 +88,7 @@ a {
 main {
    flex-grow: 1;
    @media(max-width: 630px) {
-      padding-inline: 10px;
+      padding-inline: 0.625rem;
    }
 }
 
@@ -97,16 +97,16 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 40px 100px 0 100px;
+    padding: 2.5rem 6.25rem 0 6.25rem;
     
     @media (max-width: 687px) {
-        padding: 20px 20px 0 20px;
+        padding: 1.25rem 1.25rem 0 1.25rem;
     }
 
     &__logo {
         @media (max-width: 662px) {
-            width: 145px;
-            height: 46.881px;
+            width: 9.0625rem;
+            height: 2.9301rem;
         }
     }
 
@@ -114,8 +114,8 @@ main {
         list-style: none;
         display: flex;
         color: $main-color;
-        gap: 57px;
-        font-size: 24px;
+        gap: 3.5625rem;
+        font-size: 1.5rem;
 
         a {
             text-decoration: none;
@@ -124,7 +124,7 @@ main {
 
         .active {
             text-decoration: underline;
-            text-underline-offset: 5px;
+            text-underline-offset: 0.3125rem;
         }
 
         a:hover {
@@ -132,8 +132,8 @@ main {
         }
 
         @media (max-width: 662px) {
-            gap: 26px;
-            font-size: 12px;
+            gap: 1.625rem;
+            font-size: 0.75rem;
         }
 
         &__home__link:hover, &__about__link:hover {
@@ -154,22 +154,22 @@ main {
    border-radius: 25px;
    align-self: center;
    color: #FFFFFF;
-   margin-block: 50px 43px;
+   margin-block: 3.125rem 2.6875rem;
 
    @media (max-width: 662px) {
-      min-height: 111px;
-      width: 335px;
-      margin-block: 27px 22px;
+      min-height: 6.9375rem;
+      width: 20.9375rem;
+      margin-block: 1.6875rem 1.375rem;
       border-radius: 10px;
       display: flex;
-      padding-left: 10px;
+      padding-left: 0.625rem;
    }
 
    h1 {
       @media (max-width: 662px) {
       display: flex;
       flex-direction: column;
-      font-size: 24px;
+      font-size: 1.5rem;
       font-weight: 500;
       }
    }
@@ -180,26 +180,26 @@ main {
    background-color: #F6F6F6;
    max-width: 1240px;
    min-height: 50vh;
-   border-radius: 25px;
+   border-radius: 1.5625rem;
    margin-inline: auto;
-   margin-bottom: 50px ;
-   padding: 56px 50px 43px 50px;
+   margin-bottom: 3.125rem ;
+   padding: 3.5rem 3.125rem 2.6875rem 3.125rem;
    @include flexRowCenter;
    flex-wrap: wrap;
-   gap: 50px;
+   gap: 3.125rem;
    flex-grow: 1;
 
    @media (max-width: 856px) {
        background-color: #FFFFFF;
-       padding: 0 10px 27px 10px;
-       gap: 20px;
+       padding: 0 0.625rem 1.6875rem 0.625rem;
+       gap: 1.25rem;
    }
 }
 
 // Card
 .card {
-   width: 340px;
-   height: 340px;
+   width: 21.25rem;
+   height: 21.25rem;
    border-radius: 10px;
    display: flex;
    align-items: end;
@@ -207,8 +207,8 @@ main {
    
    
    @media (max-width: 662px) {
-       width: 335px;
-       height: 255px;
+       width: 20.9375rem;
+       height: 15.9375rem;
    }
    
    &__link {
@@ -225,9 +225,9 @@ main {
 
        &__title {
            color: #FFF;
-           margin: 20px;
+           margin: 1.25rem;
            width: 50%;
-           font-size: 18px;
+           font-size: 1.125rem;
            font-weight: 500;
            position: absolute;
            bottom: 0;
@@ -240,12 +240,12 @@ main {
 
 .footer {
     width: 100%;
-    height: 209px;
+    height: 13.0625rem;
     background-color: #000;
     color: #FFF;
     @include flexColCenter;
-    gap: 29px;
-    font-size: 24px;
+    gap: 1.8125rem;
+    font-size: 1.5rem;
     position: relative;
     bottom: 0;
 
@@ -258,10 +258,10 @@ main {
 
     &__text {
         @media(max-width: 662px) {
-            font-size: 12px;
+            font-size: 0.75rem;
             text-align: center;
-            width: 120px;
-            height: 46px;
+            width: 7.5rem;
+            height: 2.875rem;
         }
     }
 
@@ -272,14 +272,14 @@ main {
    width: 100%;
    display: flex;
    flex-direction: column;
-   margin-block: 50px;
+   margin-block: 3.125rem;
    flex-grow: 1;
-   padding-inline: 100px;
+   padding-inline: 6.25rem;
 
    @media(max-width: 1115px) {
-      margin-block: 27px 25px;
-      padding-inline: 20px ;
-      padding-bottom: 27px;
+      margin-block: 1.6875rem 1.5625rem;
+      padding-inline: 1.25rem ;
+      padding-bottom: 1.6875rem;
    }
 }
 
@@ -292,7 +292,7 @@ main {
 
 .carousel {
    width: 100%;
-   height: 445px;
+   height: 27.8125rem;
    position: relative;
    display: flex;
    align-items: center;
@@ -320,11 +320,11 @@ main {
 
    &__count {
       position: absolute;
-      bottom: 25px;
-      font-size: 18px;
+      bottom: 1.5625rem;
+      font-size: 1.125rem;
 
       @media (max-width: 636px) {
-         font-size: 12px;
+         font-size: 0.75rem;
          
       }
 
@@ -335,21 +335,21 @@ main {
       position: absolute;
 
       @media (max-width: 636px) {
-         font-size: 14px;
+         font-size: 0.875rem;
       }
       
 
       &--left {
-         left: 25px;
+         left: 1.5625rem;
       }
 
       &--right {
-         right: 25px;
+         right: 1.5625rem;
       }
    }
 
    @media(max-width: 630px) {
-      height: 255px;
+      height: 15.9375rem;
    }
 }
 
@@ -357,10 +357,10 @@ main {
    display: flex;
    justify-content: space-between;
    color: $main-color;
-   margin-block: 30px 31px;
+   margin-block: 1.875rem 1.9375rem;
 
    @media(max-width: 1115px) {
-      margin-bottom: 20px;
+      margin-bottom: 1.25rem;
       width: 100%;
       flex-direction: column;
    }
@@ -370,17 +370,17 @@ main {
       display: flex;
       justify-content: center;
       flex-direction: column;
-      gap: 20px;
+      gap: 1.25rem;
 
       @media(max-width: 1115px) {
          width: 100%;
-         gap: 10px;
+         gap: 0.625rem;
       }
 
       &__info {
          display: flex;
          flex-direction: column;
-         gap: 15px;
+         gap: 0.9375rem;
 
          @media(max-width: 1115px) {
             gap: 0;
@@ -388,35 +388,35 @@ main {
       }
 
       &__info > h1 {
-         height: 51px;
-         font-size: 36px;
-         line-height: 35px;
+         height: 3.1875rem;
+         font-size: 2.25rem;
+         line-height: 2.1875rem;
          display: flex;
          align-items: center;
 
          @media(max-width: 1115px) {
             line-height: 142.6%;
-            height: 48px;
-            font-size: 18px;
+            height: 3rem;
+            font-size: 1.125rem;
          }
       }
       
       &__info > p {
-         font-size: 18px;
-         height: 26px;
+         font-size: 1.125rem;
+         height: 1.625rem;
 
          @media(max-width: 1115px) {
-            height: 22px;
-            font-size: 14px;
+            height: 1.375rem;
+            font-size: 0.875rem;
          }
       }
       
       &__tags {
          display: flex;
-         gap: 10px;
+         gap: 0.625rem;
 
          @media(max-width: 1115px) {
-            margin-top: 10px;
+            margin-top: 0.625rem;
          }
          
          & > button {
@@ -428,7 +428,7 @@ main {
    &__owner {
       width: 50%;
       display: flex;
-      gap: 27px;
+      gap: 1.6875rem;
       flex-direction: column;
       align-items: flex-end;
 
@@ -436,23 +436,23 @@ main {
          width: 100%;
          flex-direction: row-reverse;
          align-items: center;
-         margin-top: 20px;
+         margin-top: 1.25rem;
       }
 
       .fa-star {
-         font-size: 25px;
+         font-size: 1.5625rem;
          @media(max-width: 1115px) {
-            font-size: 15px;
+            font-size: 0.9375rem;
          }
          
          &--filled {
             color: $main-color;
-            padding-inline: 5px;
+            padding-inline: 0.3125rem;
          }
          
          &--empty {
             color: $greyStar;
-            padding-inline: 5px;
+            padding-inline: 0.3125rem;
          }
       }
       
@@ -460,7 +460,7 @@ main {
       &__info {
          display: flex;
          align-items: center;
-         gap: 10px;
+         gap: 0.625rem;
 
          @media(max-width: 1115px) {
             margin-left: auto;
@@ -472,18 +472,18 @@ main {
             flex-direction: column;
             align-items: flex-end;
             @media(max-width: 1115px) {
-               font-size: 12px;
+               font-size: 0.75rem;
             }
          }
 
          & > img {
-            width: 64px;
-            height: 64px;
+            width: 4rem;
+            height: 4rem;
             border-radius: 50%;
 
             @media(max-width: 1115px) {
-               width: 32px;
-               height: 32px;
+               width: 2rem;
+               height: 2rem;
             }
          }
       }
@@ -494,11 +494,12 @@ main {
    width: 100%;
    display: flex;
    justify-content: space-between;
-   gap: 76px;
+   gap: 4.75rem;
    margin-inline: auto;
 
+
    @media(max-width: 1340px) {
-      min-width: 335px;
+      min-width: 20.9375rem;
       flex-direction: column;
       align-items: center;
       gap: 40px;
@@ -506,7 +507,7 @@ main {
 }
 
 .dropdown {
-   min-width: 582px;
+   min-width: 36.375rem;
    overflow: hidden;
 
    &.visible {
@@ -514,32 +515,32 @@ main {
    }
 
    &.hidden {
-      margin-bottom: -50px;
+      margin-bottom: -3.125rem;
    }
 
    @media (max-width: 706px) {
-      min-width: 335px;
+      min-width: 20.9375rem;
    }
    
    
    &__title {
       background-color: $main-color;
       color: #FFF;
-      font-size: 18px;
-      height: 52px;
-      border-radius: 10px;
+      font-size: 1.125rem;
+      height: 3.25rem;
+      border-radius: 0.625rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 20px 10px 10px;
+      padding: 0.625rem 1.25rem 0.625rem 0.625rem;
       position: relative;
       z-index: 1;
       overflow: hidden;
       
       @media (max-width: 706px) {
-         font-size: 13px;
-         height: 30px;
-         border-radius: 5px;
+         font-size: 0.8125rem;
+         height: 1.875rem;
+         border-radius: 0.3125rem;
       }
 
       &.visible {
@@ -549,28 +550,30 @@ main {
    
    &__content {
       background-color: $greyCollapse;
-      transition: all 0.3s ease-in-out;
       overflow: hidden;
-      border-radius: 0 0 5px 5px;
-      padding: 25px 28px 20px 20px;
+      border-radius: 0 0 0.3125rem 0.3125rem;
+      padding: 1.5625rem 1.75rem 1.25rem 1.25rem;
       color: $main-color;
-      font-size: 18px;
+      font-size: 1.125rem;
       font-weight: 400;
       display: flex;
       flex-direction: column;
+      transition: all 0.6s ease-in-out;
 
       @media (max-width: 811px) {
-         padding: 10px 20px 19px 20px;
+         font-size: 0.75rem;
+         padding: 0.625rem 1.25rem 1.1875rem 1.25rem;
       }
       
       &.visible {
-         height: 250px;
-         transform: translateY(0);
+         min-height: 17rem;
+         max-height: 19.375rem;
       }
       
       &.hidden {
          transform: translateY(-100%);
-         height: 0;
+         min-height: 0;
+         max-height: 0;
       }
    }
 }
@@ -590,25 +593,25 @@ main {
    flex-grow: 1;
    overflow: hidden;
    @include flexColCenter;
-   margin-block: 124px 139px;
-   gap: 139px;
+   margin-block: 7.75rem 8.6875rem;
+   gap: 8.6875rem;
    color: $main-color;
 
-   @media (max-width: 687px) {
-      gap: 113px;
-      margin-block: 9px;
+   @media (max-width: 42.9375rem) {
+      gap: 7.0625rem;
+      margin-block: 0.5625rem;
    }
 
    &__title {
-      width: 597px;
-      height: 263px;
-      font-size: 288px;
+      width: 37.3125rem;
+      height: 16.4375rem;
+      font-size: 18rem;
       @include flexRowCenter;
 
-      @media (max-width: 1109px) {
-         width: 198px;
-         height: 99px;
-         font-size: 96px;
+      @media (max-width: 69.3125rem) {
+         width: 12.375rem;
+         height: 6.1875rem;
+         font-size: 6rem;
       }
    }
 
@@ -640,28 +643,26 @@ main {
    max-width: 1440px;
    display: flex;
    flex-direction: column;
-   padding-bottom: 30px;
+   padding-bottom: 1.875rem;
    
-   @media (max-width: 630px) {
-      padding-inline: 19px;;
+   @media (max-width: 39.375rem) {
+      padding-inline: 1.1875rem;;
    }
    
    &__dropdowns {
       display: flex;
       flex-direction: column;
-      gap: 25px;
+      gap: 1.5625rem;
       align-items: center;
-      padding-inline: 210px;
+      padding-inline: 13.125rem;
 
-      @media (max-width: 458px) {
-         gap: 35px;
+      @media (max-width: 28.625rem) {
+         gap: 2.1875rem;
          padding-inline: 0;
          margin-inline: auto;
-         max-width: 375px;
+         max-width: 23.4375rem;
       }
-
    }
-
 }
 
 
