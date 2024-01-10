@@ -9,7 +9,7 @@ function Home() {
   return (
     <>
         <Banner
-          bannerImage="src/assets/banner-home.png "
+          bannerImage="src/assets/banner-home.png"
           bannerTextLine1="Chez vous, "
           bannerTextLine2="partout et ailleurs"
         />
