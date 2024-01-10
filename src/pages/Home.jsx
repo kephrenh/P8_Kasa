@@ -4,7 +4,7 @@ import Gallery from '../components/Gallery.jsx'
 import Banner from '../components/Banner.jsx'
 
 function Home() {
-   document.title = "Accueil - Kasa"
+  document.title = "Accueil - Kasa"
 
   return (
     <>

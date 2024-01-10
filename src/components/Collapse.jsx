@@ -1,8 +1,5 @@
 import React, { useState } from 'react'
 
-
-
-
 export default function Collapse({title, content}) {
 
   // Position initiale avec hook useState
@@ -23,12 +20,10 @@ export default function Collapse({title, content}) {
    const titleClass = (isOpen ?
       "visible" : "") + " dropdown__title";
    
-      const dropdownClass = (isOpen ?
-      "visible" : "hidden") + " dropdown";
+   const dropdownClass = (isOpen ?
+   "visible" : "hidden") + " dropdown";
 
-   
-
-  return (
+   return (
       <section className={dropdownClass}>
          <p className={titleClass}>
             <span>{title}</span>

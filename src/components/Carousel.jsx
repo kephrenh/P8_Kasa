@@ -22,7 +22,6 @@ function Carousel({slides}) {
          // Retour à la dernière image quand début de slide
          if(currentIndex === 0) {
             setCurrentIndex(length - 1)
-            
         }
     }
 
@@ -68,10 +67,6 @@ function Carousel({slides}) {
          />)}
       </div>
    )
-
-      
 }
-
-
 
 export default Carousel

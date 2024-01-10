@@ -8,8 +8,6 @@ import Host from './Host'
 import Rating from './Rating'
 import Collapse from './Collapse'
 
-
-
 export default function HousingDisplay() {
 
   // Récupération de la fiche et identification des données par id
@@ -37,50 +35,50 @@ export default function HousingDisplay() {
    
    return (
       <>
-    {data ? (  // Retourner les éléments si les données sont trouvées
-      <main className='housing'>
-        <Carousel slides={data?.pictures}/>
-        <div className='housing__header'>
-            <div className='housing__header__property'>
-               <section className='housing__header__property__info'>
-                  <Property
-                     title={data?.title}
-                     location={data?.location}
-                  />
-               </section>
-               <div className='housing__header__property__tags'>
-                  {tagList}
+         {data ? (  // Retourner les éléments si les données sont trouvées
+            <main className='housing'>
+               <Carousel slides={data?.pictures}/>
+               <div className='housing__header'>
+                  <div className='housing__header__property'>
+                     <section className='housing__header__property__info'>
+                        <Property
+                           title={data?.title}
+                           location={data?.location}
+                        />
+                     </section>
+                     <div className='housing__header__property__tags'>
+                        {tagList}
+                     </div>
+                  </div>
+                  <div className='housing__header__owner'>
+                     <div className='housing__header__owner__info'>
+                        <Host
+                           firstName={name[0]}
+                           lastName={name[1]}
+                           picture={data?.host.picture}
+                        />
+                     </div>
+                     <div className='rating'>
+                        <Rating
+                           score={data.rating}
+                        />
+                     </div>
+                  </div>
                </div>
-            </div>
-            <div className='housing__header__owner'>
-               <div className='housing__header__owner__info'>
-                  <Host
-                     firstName={name[0]}
-                     lastName={name[1]}
-                     picture={data?.host.picture}
+               <div className='collapse'>
+                  <Collapse
+                     title='Description'
+                     content={data?.description}
+                  />
+                  <Collapse
+                     title='Équipements'
+                     content={equipements}
                   />
                </div>
-                <div className='rating'>
-                  <Rating
-                     score={data.rating}
-                  />
-                </div>
-            </div>
-         </div>
-         <div className='collapse'>
-               <Collapse
-                  title='Description'
-                  content={data?.description}
-               />
-               <Collapse
-                  title='Équipements'
-                  content={equipements}
-               />
-         </div>
-        </main>
-    ) : (   // Si pas de données, redirection vers la page 404
-      <Navigate replace to="/404"/>
-    ) }
+            </main>
+               ) : (   // Si pas de données, redirection vers la page 404
+                     <Navigate replace to="/404"/>
+                   )}
     </>
   )
 }

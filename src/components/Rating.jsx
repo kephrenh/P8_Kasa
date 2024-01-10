@@ -23,8 +23,8 @@ function Rating(props) {
                      key={note.toString()}
                      className='fa-solid fa-star fa-star--empty'
                      alt="star"
-            />
-         )
+                     />
+                  )
       )
    })
 
